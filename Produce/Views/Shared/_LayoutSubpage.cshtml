@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html dir="@(System.Threading.Thread.CurrentThread.CurrentUICulture.TextInfo.IsRightToLeft ? "rtl" : "ltr")" lang="@(System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName )">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8,IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@Html.Raw(Infiniti.MvcControllers.ApplicationSettings.ThemePageTitle)</title>
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+    <link href="~/Content/bootstrap.min.css?frameX&v=337" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-theme.min.css?frameX&v=337" rel="stylesheet" />
+    <link href="~/Content/Site.css?v=10.0.36&frameX" type="text/css" rel="stylesheet" />
+    @if (System.Threading.Thread.CurrentThread.CurrentUICulture.TextInfo.IsRightToLeft)
+    {
+        <link href="~/Content/SiteRtl.css?v=9.7.3&frameX" type="text/css" rel="stylesheet" />
+    }
+    @Html.Raw(Infiniti.MvcControllers.ApplicationSettings.ThemeCss(Url.Content("~/")))
+    <script src="~/scripts/jquery-3.1.1.min.js" type="text/javascript"></script>
+    @RenderSection("AddToHead", required: false)
+    <script>
+        $(document).ready(function () {
+            var loadCss = function (href) {
+                var cssLink = $("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + href + "\">");
+                $("head").append(cssLink);
+            };
+            var baseUrl = $("#baseUrl", parent.document.body).val();
+            var skinPublished = $("#skinCss", parent.document.body).val();
+            var projectSkinPublished = $("#projectSkinCss", parent.document.body).val();
+            var projectId = $("#projectId", parent.document.body).val();
+            if (skinPublished && skinPublished.length > 0) {
+                loadCss(baseUrl + "Styles/Skin?v=" + skinPublished);
+            }
+            if (projectSkinPublished && projectSkinPublished.length > 0) {
+                loadCss(baseUrl + "Styles/ProjectSkin?id=" + projectId + "&v=" + projectSkinPublished);
+            }
+        });
+    </script>
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>

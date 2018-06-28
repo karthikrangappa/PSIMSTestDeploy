@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="SharePointDownloadHandler.ashx.cs" Class="MicrosoftSharePointConnector.SharePointDownloadHandler" %>

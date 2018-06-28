@@ -1,0 +1,52 @@
+﻿@using Intelledox.Produce
+@model ContactViewModel
+@{
+    ViewBag.CurrentTab = MenuTab.Contact;
+}
+@Html.Partial("_SiteHeader")
+<div class="container ix-header-body" autocomplete="off">
+    <h2>
+        @Resources.Strings.ReassignTask
+    </h2>
+
+    @if (!String.IsNullOrEmpty(ViewBag.Message))
+    {
+        <p class="bg-error">@ViewBag.Message</p>
+    }
+    @using (Html.BeginForm("ReassignTemporary", "Home", new { id = ViewContext.RouteData.Values["id"] }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        if (ViewBag.ProjectGroupId != null && ViewBag.ProjectGroupId != Guid.Empty)
+        {
+            <input type="hidden" id="projectGroupId" name="projectGroupId" value="@ViewBag.ProjectGroupId.ToString()" />
+        }
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="UserName">@Resources.Strings.Email</label>
+                </div>
+                <div class="col-sm-3">
+                    <label for="LastName">@Resources.Strings.FullName</label>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <input type="text" id="Email" name="Email" class="form-control" autocomplete="off" value="@Microsoft.Security.Application.Encoder.HtmlEncode(ViewBag.Email)" />
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" id="FullName" name="FullName" class="form-control" autocomplete="off" value="@Microsoft.Security.Application.Encoder.HtmlEncode(ViewBag.FullName)" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Comment" class="control-label">@Resources.Strings.Comment</label>
+            <textarea id="Comment" name="Comment" class="form-control" rows="10">@Microsoft.Security.Application.Encoder.HtmlEncode(ViewBag.Comment)</textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" name="ReassignAnonymous" class="btn btn-primary" value="@Resources.Strings.Reassign" />
+        </div>
+    }
+</div>

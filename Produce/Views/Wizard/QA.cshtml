@@ -1,0 +1,73 @@
+﻿<input type="hidden" id="reloadPageUrl" value="~/wizard/ReloadPage/@Request.RequestContext.RouteData.Values["id"].ToString()/?@Request.QueryString" />
+<input type="hidden" id="saveActionUrl" value="~/wizard/SaveAnswerFile/@Request.RequestContext.RouteData.Values["id"].ToString()/?@Request.QueryString" />
+<input type="hidden" id="tempUserReassignUrl" value="~/wizard/TempUserReassign/@Request.RequestContext.RouteData.Values["id"].ToString()/?@Request.QueryString" />
+<input type="hidden" id="changeSortUrl" value="~/wizard/ChangeSort/@Request.RequestContext.RouteData.Values["id"].ToString()/?@Request.QueryString" />
+<input type="hidden" id="selectTabUrl" value="~/wizard/SelectTab/@Request.RequestContext.RouteData.Values["id"].ToString()/?@Request.QueryString" />
+<input type="hidden" id="logUrl" value="~/wizard/@Request.RequestContext.RouteData.Values["id"].ToString()/?@(Request.QueryString.ToString().Contains("logguid") ? Request.QueryString.ToString() : "logguid=" + Model.ProjectLog + "&" + Request.QueryString.ToString())" />
+<form action="~/wizard/WizardAction/@Request.RequestContext.RouteData.Values["id"].ToString()/?@Request.QueryString" id="aspnetForm" method="post"
+      novalidate="novalidate">
+    <div id="up">
+        @{ Html.RenderAction("RenderPage", new { logGuid = Model.ProjectLog, scrollToTop = false, logRenderPage = true }); }
+    </div>
+
+    <div id="popupModal" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" style="text-align:center">
+            <div class="modal-content modal-insert"></div>
+        </div>
+    </div>
+    <div id="popupLargeModal" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" style="text-align: center">
+            <div class="modal-content modal-lg-insert"></div>
+        </div>
+    </div>
+
+    <div id="popupLargeDraggableModal" class="modal fade" role="dialog" aria-hidden="true">
+        <div id="draggableDialog" class="modal-dialog modal-lg" style="text-align: center">
+            <div class="modal-content modal-lgd-insert"></div>
+        </div>
+    </div>
+    <div id="popupFullscreenModal" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen" style="text-align: center">
+            <div class="modal-content modal-lgf-insert"></div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    $(".modal-fullscreen").on('show.bs.modal', function () {
+        setTimeout(function () {
+            $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
+        }, 0);
+    });
+    $(".modal-fullscreen").on('hidden.bs.modal', function () {
+        $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
+    });
+    $('#up').on('click', 'input[type="submit"]', function (e) {
+        e.preventDefault();
+        if ($(this).data('pushstate') == 'true') {
+            wiz.formIsDirty = true;
+            wiz.pushingState = true;
+        }
+        if ($(this).data('repeatpath') != null) {
+            wiz.setPath($(this).data('fragmentguid'), $(this).data('objectid'), $(this).data('repeatpath'));
+        }
+        if ($(this).data('command') != null) {
+            wiz.doAjaxPost($(this).data('command'));
+        } else {
+            wiz.doAjaxPost($('#aspnetForm').prop('action'), $(this).prop('name'), $(this).val());
+        }
+        this.disabled = true;
+    });
+
+    @if (Model.AllowTimeout)
+    {
+        @:wiz.logOut(@(Model.TimeoutPeriod));
+    }
+    else
+    {
+        @:wiz.keepAlive('@(Model.ProjectLog)', @(Model.TimeoutPeriod));
+    }
+    @if (Model.WizardModel.LiveRefresh)
+    {
+        @:wiz.liveRefresh(@((Model.WizardModel.RefreshPeriod * 1000).ToString()));
+    }
+ </script>

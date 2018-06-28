@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutSubpage.cshtml";
+}
+<form method="post" enctype="multipart/form-data">
+    <div>
+        <script type="text/javascript">
+            function closeMe() {
+                parent.wiz.closeModal();
+            }
+        </script>
+        <div style="padding:5px">
+            <br />
+            <div style="text-align:center">@Resources.Strings.ItemImportDesc</div>
+            <br />
+
+            @if (!string.IsNullOrEmpty(ViewBag.Message))
+            {
+                <div class="warningmsg">@ViewBag.Message</div>
+            }
+
+            <input type="file" name="uploadControl" id="uploadControl" style="width:300px;" />
+            <br />
+            <div style="text-align:center">
+                <input type="submit" name="btnImport" value="@Resources.Strings.Import" id="btnImport" class="btn btn-primary" />
+                <input type="button" id="btnClose" class="btn btn-default" value="@Resources.Strings.Close" onclick="closeMe()" />
+            </div>
+        </div>
+    </div>
+</form>

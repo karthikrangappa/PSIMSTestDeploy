@@ -1,0 +1,134 @@
+﻿@using Intelledox.Produce
+@model Intelledox.Produce.ContentLibraryViewModel
+@{ 
+    Layout = "~/Views/Shared/_QuestionLayout.cshtml";
+    var qid = Html.IdFor(Model.Question);
+    var isDisabled = !Model.Question.IsEditable;
+}
+<div>
+    @if (Model.ShowSearch)
+    {
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="input-group">
+                    <input type="text" id="@(qid)_txtSearch" name="@(qid)_txtSearch" class="form-control" title="@Resources.Strings.Search" value="@Model.SearchTerm"
+                           onfocus="wiz.setDefaultButton('@(qid)_btnSearch');" onblur="wiz.setDefaultButton(undefined);" disabled="@isDisabled" @if (Model.LogInteractions) { <text>data-analyticsid="@(Model.AnalyticsID)" data-analyticsevent="contentTxtSearch"</text> } />
+                    <span class="input-group-btn">
+                        <button id="@(qid)_btnSearch" type="button" class="btn btn-default" disabled="@isDisabled" onclick="wiz.searchContent('@Model.Question.WizardFragment.InstanceId.ToString()', '@Model.Question.QuestionGuid.ToString()', '@Model.RepeatPath');@Html.Raw(Model.LogInteractions ? "wiz.dataAnalyticsFocusAndBlur(" + @Microsoft.Security.Application.Encoder.JavaScriptEncode(Model.AnalyticsID) + ", 'contentBtnSearch'" + ");" : "")">@Resources.Strings.Search</button>
+                    </span>
+                </div>
+            </div>
+            @if (Model.ShowUpload)
+            {
+                <div class="col-xs-9">
+                    <button id="@(qid)_btnUpload" type="button" class="btn btn-default" disabled="@isDisabled" onclick="wiz.openUploadPage('@Url.Content("~/")', '@Model.Question.WizardFragment.InstanceId.ToString()', '@Model.Question.QuestionGuid.ToString()', 'content', '@Model.RepeatPath', '@Model.Question.WizardFragment.WizardSession.ProjectLog.ToString()', null);@Html.Raw(Model.LogInteractions ? "wiz.dataAnalyticsFocusAndBlur(" + @Microsoft.Security.Application.Encoder.JavaScriptEncode(Model.AnalyticsID) + ", 'contentUpload'" + ");" : "")">@Resources.Strings.UploadNew</button>
+                </div>
+            }
+        </div>
+    }
+    else if (Model.ShowUpload)
+    {
+        <input type="button" id="@(qid)_btnUpload" class="btn btn-default" value="@Resources.Strings.UploadNew" disabled="@isDisabled" onclick="wiz.openUploadPage('@Url.Content("~/")', '@Model.Question.WizardFragment.InstanceId.ToString()', '@Model.Question.QuestionGuid.ToString()', 'content', '@Model.RepeatPath', '@Model.Question.WizardFragment.WizardSession.ProjectLog.ToString()', null);@Html.Raw(Model.LogInteractions ? "wiz.dataAnalyticsFocusAndBlur(" + @Microsoft.Security.Application.Encoder.JavaScriptEncode(Model.AnalyticsID) + ", 'contentUpload'" + ");" : "")" />
+    }
+    @if (Model.ShowClear && Model.Question.IsEditable)
+    {
+        <a href="#void" onclick="wiz.clearContent('@Model.Question.WizardFragment.InstanceId.ToString()', '@Model.Question.QuestionGuid.ToString()', '@Model.RepeatPath');@Html.Raw(Model.LogInteractions ? "wiz.dataAnalyticsFocusAndBlur(" + @Microsoft.Security.Application.Encoder.JavaScriptEncode(Model.AnalyticsID) + ", 'contentClear'" + ");" : "");return false;">@Resources.Strings.ClearContent</a><br />
+    }
+    <span>@Model.ContentName</span>
+    @if (Model.ShowLibraryImage)
+    {
+        <span class="preview" onmouseover="wiz.previewImage(event, '@Model.Question.ContentItemGuid.ToString()', '@Url.Content("~/")', '@Model.Question.WizardFragment.WizardSession.WizardModel.PublishedBy.ToString("o")');@Html.Raw(Model.LogInteractions ? "wiz.dataAnalyticsFocusAndBlur(" + @Microsoft.Security.Application.Encoder.JavaScriptEncode(Model.AnalyticsID) + ", 'contentPreview'" + ");" : "")" onmouseout="wiz.previewClose()">[@Resources.Strings.Preview]</span>
+    }
+    @if (Model.ShowAttachment)
+    {
+        <a href="~/WizardSupport/GetFragment?fragGuid=@(Model.Question.ContentItemGuid.ToString())&publishedBy=@Model.Question.WizardFragment.WizardSession.WizardModel.PublishedBy.ToString("o")" target="_blank" class="preview @Html.Raw(Model.LogInteractions ? "analyticslog" : "")" @if (Model.LogInteractions) { <text>data-analyticsid="@(Model.AnalyticsID)" data-analyticsevent="contentOpen"</text> }>[@Resources.Strings.Open]</a>
+    }
+    @if (Model.ShowDownload)
+    {
+        <a href="~/WizardSupport/GetAttachment?fragmentGuid=@(Model.Question.WizardFragment.InstanceId.ToString())&qid=@(Model.Question.QuestionGuid.ToString())&path=@(@Model.RepeatPath)&LogGuid=@Model.Question.WizardFragment.WizardSession.ProjectLog.ToString()" target="_blank" class="preview @Html.Raw(Model.LogInteractions ? "analyticslog" : "")" @if (Model.LogInteractions) { <text>data-analyticsid="@(Model.AnalyticsID)" data-analyticsevent="contentOpen"</text> }>[@Resources.Strings.Open]</a>
+    }
+    @if (Model.ShowPreview)
+    {
+        <input type="hidden" name="@(qid)_ShowPreview" value="1" />
+
+        if (Model.ShowImage)
+        {
+            <img src="~/WizardSupport/GetImage?Thumb=2&Guid=@Model.Question.ContentItemGuid.ToString()&QuestionId=@Model.Question.QuestionGuid.ToString()&publishedBy=@Model.Question.WizardFragment.WizardSession.WizardModel.PublishedBy.ToString("o")&LogGuid=@Model.Question.WizardFragment.WizardSession.ProjectLog.ToString()&fragmentGuid=@(Model.Question.WizardFragment.InstanceId.ToString())&repeatPath=@Model.RepeatPath" alt=" " />
+        }
+        else if (!Model.ShowAttachment)
+        {
+            if (!Model.Question.IsEditable)
+            {
+                <div id="@(qid)_txtPreview" class="question-label">@Model.ContentText</div>
+            }
+            else
+            {
+                <textarea id="@(qid)_txtPreview" name="@(qid)_txtPreview" class="form-control" rows="4" disabled="@isDisabled" @Html.Raw(Model.Question.IsMandatory ? "required" : "") @if (Model.LogInteractions) { <text>data-analyticsid="@(Model.AnalyticsID)" data-analyticsevent="contentPreview"</text> }>@Model.ContentText</textarea>
+            }
+        }
+    }
+    @if (Model.ShowAddToContentLibrary)
+    {
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="@(qid)_chkAddToContentLibrary" name="@(qid)_chkAddToContentLibrary" value="True" checked="@Model.ShowContentName" disabled="@isDisabled" onclick="wiz.reload()" @if (Model.LogInteractions) { <text>data-analyticsid="@(Model.AnalyticsID)" data-analyticsevent="contentAddToLibrary"</text> } />
+                @Resources.Strings.AddToContentLibrary
+            </label>
+        </div>
+    }
+</div>
+@if (Model.ShowContentName)
+{
+    <div class="form-group">
+        <label for="@(qid)_txtContentName">@Resources.Strings.Name</label>
+        <div>
+            <input type="text" id="@(qid)_txtContentName" name="@(qid)_txtContentName" class="form-control" value="@Model.ContentName" @Html.Raw(Model.Question.HasValidationErrors() ? "aria-invalid=\"true\" aria-describedby=\"error_" + qid + "_txtContentName\"" : "")/>
+        </div>
+        @Html.DisplayValidation(Model.Question.LastValidationMessage, qid + "_txtContentName")
+    </div>
+}
+else
+{
+    @Html.DisplayValidation(Model.Question.LastValidationMessage)
+}
+@if (Model.ShowResults)
+{
+    <table id="@(qid)_grdResults" class="table table-condensed" role="presentation">
+        <thead>
+            <tr>
+                <th></th>
+                <th>@Resources.Strings.Name</th>
+                <th>@Resources.Strings.Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.HasSearchResults)
+            {
+                foreach (var ci in Model.SearchResults)
+                {
+                    <tr>
+                        <td><a href="#void" title="@Resources.Strings.SelectString @ci.Name" onclick="@Html.Raw(Model.LogInteractions ? "wiz.dataAnalyticsFocusAndBlur(" + @Microsoft.Security.Application.Encoder.JavaScriptEncode(Model.AnalyticsID) + ", 'contentSearchSelect'" + ");" : "")wiz.selectContent('@Model.Question.WizardFragment.InstanceId.ToString()', '@Model.Question.QuestionGuid.ToString()', '@ci.Id.ToString()', '@Model.RepeatPath');@Html.Raw(Model.LogInteractions ? "wiz.dataAnalyticsFocusAndBlur(" + @Microsoft.Security.Application.Encoder.JavaScriptEncode(Model.AnalyticsID) + ", 'contentSelect'" + ");" : "")return false;">@Resources.Strings.SelectString</a></td>
+                        <td>
+                            @ci.Name
+                            @if (ci.TypeId == Intelledox.Model.ContentType.Image)
+                            {
+                                <span class="preview" onmouseover="wiz.previewImage(event, '@ci.Id.ToString()', '@Url.Content("~/")', '@Model.Question.WizardFragment.WizardSession.WizardModel.PublishedBy.ToString("o")')" onmouseout="@Html.Raw(Model.LogInteractions ? "wiz.dataAnalyticsFocusAndBlur(" + @Microsoft.Security.Application.Encoder.JavaScriptEncode(Model.AnalyticsID) + ",'contentImagePreviewHover'" + ");" : "")wiz.previewClose()">[@Resources.Strings.Preview]</span>
+                            }
+                            else if (ci.TypeId == Intelledox.Model.ContentType.DocumentFragment)
+                            {
+                                <a href="~/WizardSupport/GetFragment?fragGuid=@(ci.Id.ToString())&publishedBy=@Model.Question.WizardFragment.WizardSession.WizardModel.PublishedBy.ToString("o")" target="_blank" class="preview @Html.Raw(Model.LogInteractions ? "analyticslog" : "")" @if (Model.LogInteractions) { <text>data-analyticsid="@(Model.AnalyticsID)" data-analyticsevent="contentOpenDocument"</text> } >[@Resources.Strings.Open]</a>
+                            }
+                        </td>
+                        <td>@ci.Description</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3">@Resources.Strings.EmptyTable</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

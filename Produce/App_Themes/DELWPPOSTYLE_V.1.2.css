@@ -1,0 +1,923 @@
+h1{
+    font-family: 'VIC-SemiBold', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: #642667;
+}
+
+h2{
+    font-family: 'VIC-Bold', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    color: #642667;
+}
+
+h3{
+    font-family: 'VIC-SemiBold', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #642667;
+}
+
+h4{
+    font-family: 'VIC-SemiBold', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #642667;
+}
+
+body{
+    font-family: 'VIC-Regular', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #6F6F6F;
+}
+
+a{
+    font-family: 'VIC-Regular', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #642667 !important;
+}
+
+
+a:focus{
+    outline: -webkit-focus-ring-color auto 0px;
+    outline:0px;
+}
+
+:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+    outline: 0px;
+}
+
+.container-fluid{
+    padding-left:40px;
+    padding-right:40px;
+}
+
+.instructions{
+    font-family: 'VIC-Italic', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #989898;
+    display: block;
+    
+}
+
+.toprightdiv
+{
+    background-color:#F4F4F6;
+    width: auto;
+    margin-right:-17px;
+    height:100px;
+    text-align:center;
+    vertical-align:middle;
+    line-height:4;
+    padding: 20px 40px;
+}
+
+.backtodashboardlink
+{
+    color: white !important;
+}
+
+.backtodashboarddiv, .titleAnswerFiles {
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 4px;
+    background-color:#642669;
+    padding: 13px 18px;
+}
+
+.backtodashboardlink
+{
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'VIC-Regular';
+    font-weight: normal;
+}
+
+.backtodashboardlink:hover
+{
+    text-decoration: none;
+}
+
+.triangle-topleft {
+    width: 0;
+	height: 0;
+    border-top: 100px solid #642669;
+    border-right: 42px solid transparent;
+	position:absolute;
+}
+
+.headerdiv
+{
+    background-color: #f0e9f0;
+    padding: 0 20px 20px 50px;
+    display: inline-table;
+    margin: 0;
+    width: 100%;
+}
+
+.leftBorder
+{
+    border-left:0;
+}
+
+.signuplabel
+{
+    text-align: center;
+    background-color: white !important;
+    border: 0;
+    font-size: 18px;
+    color: #642667 !important;
+    font-family: 'VIC-SemiBold', Arial, Helvetica, sans-serif;
+}
+
+.successfulsignupdiv{
+        text-align: center;
+    /*padding-top: 17%;*/
+}
+
+.question-text label{
+    font-family: 'VIC-SemiBold', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #6F6F6F;
+}
+
+.SubmitButton{
+    background-color: #642669;
+    border-radius: 0px;
+    background-image: linear-gradient(to bottom,#642669 0,#642669 100%) !important;
+    width: 15%;
+}
+
+#divLogin,.formwrapper {
+    max-width: 359px;
+    margin: 40px auto;
+    display: flow-root;
+    padding: 20px !important;
+    box-shadow: 0px 2px 8px 0px #a29292;
+}
+
+.login-title, .formtitle {
+    background: none !important;
+    color: #642667;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.form-horizontal .control-label {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: left;
+    color: #747474;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+input[type]::placeholder{
+    color:#c6adc4;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: none;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    padding: 6px 0px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.form-control:focus{
+    border-color: #672667;
+    box-shadow: none;
+}
+
+.form-control[disabled]{
+    background-color: #fff;
+    opacity: 1;
+    border: 0;  
+}
+
+.notAnswered {
+    font-style: italic;
+    font-size: 14px;
+    line-height: 2;
+    color: #afafaf;
+}
+
+.signout-link {
+    margin-left: 0;
+}
+
+#tblLogin, #divForgotPassword{
+	display: flow-root;
+    width: 80%;
+    margin: 0 10% 0;
+}
+
+a#lnkForgotPassword {
+    display: block;
+    text-align: center;
+    margin: 15px 0 0 0;
+    color: #6a2f6d;
+    font-size: 15px;
+    width: 100%;
+}
+
+#lblForgotPwdMsg{
+    color: #6f6f6f;
+    font-size: 16px;
+    margin-top: 20px;
+    display: inline-block;
+    
+}
+
+#btnSubmit, input#btnSignIn, .genbutton{
+    background: #642667;
+    border-radius: 0;
+    border: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.7;
+    margin-top: 10px;
+    width: 100%;
+}
+
+input#btnGenerateDoc{
+    background: #642667;
+    border-radius: 0;
+    border: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.7;
+    margin-top: 10px;
+    width:auto;
+    padding: 6px 60px;
+}
+
+.question-text{
+    border: 0;
+    margin-bottom:0;
+}
+
+.cell-footer{
+    margin-top: 20px;
+}
+
+#lblAfter{
+    color: #6F6F6F;
+    font-family: 'VIC-Regular', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.GroupCenterContainer .tile-lg {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.LandingGroupCenterContainer .tile-lg{
+    width: 260px;
+}
+
+.tile-badge {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #bb9dce;
+    text-align: left;
+    background-color: transparent;
+    text-shadow: none;
+}
+
+.tile-lg .tile-icon {
+    padding-top: 70px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    filter: brightness(20);
+}
+
+.tile-content {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    color: #fff;
+    font-size: 20px;
+    white-space: normal;
+    font-family: 'VIC-SemiBold';
+    padding-right: 10px;
+}
+
+/* Grid CSS */
+.table-bordered,.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th
+{
+    border: 1px solid #d6b7d9;
+}
+
+table.dataTable tbody tr.selected, table.dataTable tbody th.selected, table.dataTable tbody td.selected{
+color: #676767 !important;
+}
+
+.dropdown-toggle, .dropdown-toggle:hover, .dropdown-toggle:focus {
+ background: transparent !important; 
+ border: 0; 
+ box-shadow: none; 
+ text-shadow: none !important;
+ color: #642669 !important;
+} 
+
+.dropdown-toggle:hover {
+    color: #642669 !important;
+    text-shadow: none !important;
+}
+
+.open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
+    color: #642669;
+    background: transparent;
+    border-color: #122b40;
+}
+
+.btn-primary:active, .open>.dropdown-toggle.btn-primary {
+    color: #642669;
+    background-color: transparent;
+    border-color: #204d74;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.navbar-right{
+    margin-right:0;
+}
+
+.navbar-right .dropdown-menu {
+    right: 20px;
+    left: auto;
+    top: 46px;
+}
+
+.dropdown-menu>li>a {
+    display: block;
+    padding: 5px 20px;
+    clear: both;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.btn .caret {
+    margin-left: 7px;
+}
+
+.navbar-nav>li>a{
+    line-height:25px;
+}
+
+.dropdown-menu{
+    border: 0;
+    border-radius: 0;
+}
+
+table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td{
+background: #f7f4f7;
+} 
+
+.navbar .container-fluid{
+    padding: 0 0 0 40px;
+    height: 100px;
+    display: flex;
+}
+
+nav{flex:1}
+/*#navbar-header {flex:0} */
+
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand{
+    float: left;
+    width: 210px;
+    height: 60%;
+    display: block;
+    margin-top: 21px;
+}
+
+.navbar-text,#HomeMenu  a{
+    height: 85%;
+    line-height: 75px;
+    vertical-align: middle;
+}
+
+header.navbar {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.Group {
+    border-left: 0 !important;
+    padding-left:0;
+}
+
+.table>thead>tr>th {
+    padding: 8px 15px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    font-size: 14px;
+    font-family: 'VIC-Regular';
+}
+
+#formHeader h1{
+ line-height:60px; 
+}
+
+.field-validation-error {
+color:#dc3936;
+margin-top:4px;
+display:block;
+font-size:14px;
+}
+
+.qtdiv{
+/*display:block;*/
+padding:0;
+} 
+
+.wrn, .autocomplete-message {
+    background: #ffeaea;
+    padding: 2px;
+    color: #ff3d3d;
+    border-radius: 0;
+    display: inline-block;
+    padding: 7px 15px;
+    line-height: 16px;
+    margin-top: 7px;
+    letter-spacing: 0.5px;
+} 
+
+
+.GroupCenterContainer #labelQ1{
+    margin-left: 0;
+}
+
+/*tile-md only for primary buttons*/
+
+.tile-md {
+    width: 100%;
+    height: 100%;
+    position: unset;
+    border-radius: 0;
+    box-shadow: none;
+    background: #642667 !important;
+    border: 0;
+}
+
+.tile-md:hover{
+    background: #501e52 !important;
+    border: 0;
+}
+
+.tile-md:active{
+    background: #3c163d !important;
+    border: 0;
+}
+
+.tile-md > .tile-content {
+    display: inline-block;
+    position: static;
+    padding: 5px 15px;
+    color: #fff;
+    font-size: 16px;
+    white-space: normal;
+    font-family: 'VIC-SemiBold';
+}
+
+.GroupCenterContainer, .LandingGroupCenterContainer{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.GroupCenterContainer .l-cell, .LandingGroupCenterContainer .l-cell{
+    width:33%;
+}
+
+.GroupCenterContainer .btn-group{
+    width: 100%;
+    height: 12em;
+}
+
+.GroupCenterContainer .ls:first-child .btn-group{
+    height:auto;
+}
+
+.GroupCenterContainer .tile-sm, .LandingGroupCenterContainer .tile-sm{
+    width: 48px;
+    height: 48px;
+    background: none !important;
+    box-shadow: none;
+    padding: 0;
+    position: relative;
+    top: 60px;
+}
+
+.GroupCenterContainer .tile-sm .tile-icon, .LandingGroupCenterContainer .tile-sm .tile-icon
+{
+    filter: hue-rotate(95deg);
+}
+
+.GroupCenterContainer .subtitle{
+    color: #fff;
+    background: #642669;
+    font-size: 18px;
+    font-family: 'VIC-SemiBold', Arial;
+    padding: 30px 20px;
+}
+
+.GroupCenterContainer .tile-lg{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    background: none !important;
+    border: 2px solid #642669 !important;
+}
+
+.GroupCenterContainer .tile-content{
+    top: 45px;
+    text-shadow: none;
+    color: #642669;
+}
+
+.GroupCenterContainer .subtitle span{
+    font-size: 14px;
+    font-weight: normal;
+    color: #bb91ae;
+    font-family: 'VIC-Regular', Arial;
+}
+
+.GroupCenterContainer .tile-lg .tile-icon{
+    filter: hue-rotate(95deg);
+}
+
+.page-title{
+    font-family: 'VIC-SemiBold'; 
+}
+
+
+#OptionPanel{
+    width:300px;
+    background: transparent;
+    display: block;
+    margin-right: 30px;
+}
+
+#pagesList{
+    padding-top: 10px;
+    background: #f3f3f3;
+}
+
+#pagesList li>a {
+    display: block;
+    color: #7f7f80 !important;
+    font-size: 16px;
+    font-family: 'VIC-Regular';
+    line-height: 17px;
+    padding: 9px 0 9px 28px;
+}
+
+#pagesList .active>a, #pagesList .active:hover>a, #pagesList .active:focus>a {
+    padding-left: 6px;
+    font-weight: 700;
+    color: #642669;
+    padding: 9px 0 9px 28px;
+    background: #f3f3f3;
+    font-family: 'VIC-Semibold';
+    border:0;
+}
+
+#pagesList .g-complete{
+    background-color: #f0e9f0 !important;
+}
+
+.leftBorder
+{
+    border-left:0;
+}
+
+/*Custom radio button*/
+
+.radio-inline, .checkbox-inline{
+    padding-left:0;
+    margin-top: 10px !important;
+}
+
+.radio > label, .radio-inline > label {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio > label input, .radio-inline > label input{
+    position: absolute;
+    opacity: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #642669;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio > label:hover input ~ .checkmark, .radio-inline > label:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio > label input:checked ~ .checkmark, .radio-inline > label input:checked ~ .checkmark{
+    background-color: #ffffff;
+    border: 2px solid #642669;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio > label input:checked ~ .checkmark:after, .radio-inline > label input:checked ~ .checkmark:after  {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio > label .checkmark:after, .radio-inline > label .checkmark:after {
+ 	top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #642669;
+}
+/*Checkbox CSS*/
+
+/* The container */
+.checkbox-inline > label, .checkbox > label {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-inline > label input, .checkbox > label input{
+    position: absolute;
+    opacity: 0;
+}
+
+/* Create a custom checkbox */
+.checkboxmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #642669;
+    border-radius: 4px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-inline > label:hover input ~ .checkboxmark, .checkbox > label:hover input ~ .checkboxmark  {
+    background-color: #fff;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-inline > label input:checked ~ .checkboxmark, .checkbox > label input:checked ~ .checkboxmark {
+    background-color: #642669;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkboxmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-inline > label input:checked ~ .checkboxmark:after, .checkbox > label input:checked ~ .checkboxmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-inline > label .checkboxmark:after, .checkbox > label .checkboxmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#Questions, #QuestionsInner{
+    padding:0;
+}
+
+#Sections{
+    background:transparent !important;
+}
+
+.select-watermark{
+    color: #c6adc6 !important;
+} 
+
+textarea.form-control {
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+input[type=button]{
+    background: white;
+    border-radius: 0;
+    color: #777;
+    font-family: 'VIC-SemiBold';
+    padding: 10px 20px;
+}
+
+.pageNav input[type=button]{
+    padding: 0px;
+}
+
+div[role=heading]{
+    font-family: 'VIC-SemiBold', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #6F6F6F;
+}
+
+/*Modal CSS*/
+.modal-content{
+    padding: 20px 0;
+}
+
+.modal-content iframe span{
+    display: block;
+    color: #642667;
+    font-size: 18px;
+    font-family: 'VIC-SemiBold';
+}
+
+#startupload{
+    width: auto;
+    height: auto;
+    position: unset;
+    border-radius: 0;
+    box-shadow: none;
+    background: #642667 !important;
+    border: 0;
+}
+
+#closeupload, #cancelupload{
+    background: #f1f1f1;
+    border-radius: 0;
+    color: #777;
+    font-family: 'VIC-Regular';
+    padding: 5px 20px;
+    box-shadow: none;
+    border: 1px solid #c3c3c3;
+}
+
+#divConfirmMessage{
+    width: 260px !important;
+}
+
+.appform-subtitle{
+    font-family: 'VIC-SemiBold';
+    color: #a579a9;
+    font-size: 18px;
+    width: 50%;
+}
+
+.amenment-details{
+    float: right;
+    padding: 32px 0 0;
+    width: 20%;
+    text-align: center;
+}
+
+.amendment-num{
+    display: block;
+    color: #642669;
+    font-family: 'VIC-SemiBold';
+}
+
+.amendment-status{
+    color: #a579a9;
+    font-family: 'VIC-SemiBold';
+    font-size: 13px;
+    text-transform: uppercase;
+    margin: 13px auto 0;
+    display: block;
+    border: 2px solid #b79eb7;
+    border-radius: 20px;
+    width: max-content;
+    padding: 1px 13px;
+}
+
+.header-leftaside{
+    float:left;
+    width:80%;
+}
+
+.btn-block label.active{
+    color: #ffffff !important;
+    background: #642669 !important;
+    border-color: #642669 !important;
+}
+
+.btn-block label.btn-primary{
+    background: #fff;
+    color: #adadad;
+    text-shadow: none;
+    border: 1px solid #adadad;
+}
+
+#ProjectAnswerFiles{
+    margin-right:30px;
+    background: #f3f3f3;
+}
+
+.sidebarTop{
+    background-color: #642669 !important;
+    color: #fff !important;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+.sidebarItem{
+    padding: 2px 0 7px 25px;
+}
+
+/*Modal Window CSS*/
+.modal-content.modal-insert {
+    padding: 40px 0;
+}
+
+#Q11 > h2{
+    width: 88%;
+    text-align: center;
+    margin: 0 auto;
+} 
+
+.tile-sm {
+    border: 0;
+    box-shadow: none;
+    background: #fff;
+    background-image: unset !important;
+}
+
+#lnkGoHome{
+    line-height: 74px;
+}
+
+#lnkSignOut{
+    line-height: 20px;
+}
+
+/*media query*/
+@media (max-width: 1367px) {
+    .GroupCenterContainer, .LandingGroupCenterContainer{
+    width: 64%;
+    margin: 0 auto;
+}
+}

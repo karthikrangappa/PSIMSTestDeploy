@@ -1,0 +1,52 @@
+﻿@using Intelledox.Produce
+@model Intelledox.QAWizard.Section
+@{
+    var path = Url.Content("~/");
+    var hasTitles = Model.HasColumnHeadings;
+}
+<div class="ls @(Model.SectionModel.CssStyle)">
+    @if (!String.IsNullOrEmpty(Model.SectionModel.Title))
+    {
+    <h3 class="lsh">@Html.Raw(HtmlParsing.Sanitize(Model.SectionModel.Title))</h3>
+    }
+    @if (!String.IsNullOrEmpty(Model.SectionModel.Description))
+    {
+    <div class="lsd">@Html.Raw(HtmlParsing.Sanitize(Model.DescriptionFormatted))</div>
+    }
+    <div class="l-table">
+        <div class="l-row">
+            @* Add column titles *@
+            @foreach (Intelledox.QAWizard.ColumnHeading col in Model.ColumnHeadings)
+        {
+            if (col.IsVisible)
+            {
+                    @Html.RenderColumnHeader(col, path, Model.WizardFragment.WizardSession.ProjectLog, false)
+                }
+            }
+        </div>
+        <div class="l-row">
+            @* Column children *@
+            @for (var index = 0; index < Model.Rows[0].Children.Count; index++)
+        {
+            if (Model.ColumnHeadings[index].IsVisible)
+            {
+                if (hasTitles)
+                {
+                        @Html.RenderColumnHeader(Model.ColumnHeadings[index], path, Model.WizardFragment.WizardSession.ProjectLog, true)
+                    }
+                    <div class="l-cell lccell@(index == 0 ? " lccellfirst" : "") @Model.ColumnHeadings[index].ColumnModel.CssStyle">
+                        <div class="lc">
+                            @foreach (Intelledox.QAWizard.ILayoutNode itemNode in ((Intelledox.QAWizard.Column)Model.Rows[0].Children[index]).Children)
+                            {
+                                if (itemNode.IsVisible)
+                                {
+                                    Html.RenderNode(itemNode);
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

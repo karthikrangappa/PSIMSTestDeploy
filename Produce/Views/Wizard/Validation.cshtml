@@ -1,0 +1,8 @@
+﻿@using Intelledox.Model
+@using Intelledox.Produce
+@model Intelledox.ViewModel.Core.ValidationQuestionViewModel
+@{ 
+    Layout = "~/Views/Shared/_QuestionLayout.cshtml";
+    var qid = @Html.IdFor(Model.Question);
+}
+@Html.DisplayValidation(Model.Question.LastValidationMessage)
