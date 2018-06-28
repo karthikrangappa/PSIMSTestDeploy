@@ -1,1 +1,0 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="SharepointCustomDownload.cs" Class="SharepointDownloadCustom.SharepointCustomDownload" %>

@@ -1,1 +1,0 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="GenerateAndDownload.ashx.cs" Class="GenerateAndDownload.GenerateAndDownload" %>

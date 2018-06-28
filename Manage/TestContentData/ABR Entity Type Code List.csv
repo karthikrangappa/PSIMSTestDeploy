@@ -1,0 +1,144 @@
+Code,Description,Remarks
+ADF,Approved Deposit Fund,Other
+ARF,APRA Regulated Fund (Fund Type Unknown),Other
+CCB,Commonwealth Government Public Company,Company
+CCC,Commonwealth Government Co-operative,Other
+CCL,Commonwealth Government Limited Partnership,Partnership
+CCN,Commonwealth Government Other Unincorporated Entity,Other
+CCO,Commonwealth Government Other Incorporated Entity,Other
+CCP,Commonwealth Government Pooled Development Fund,Other
+CCR,Commonwealth Government Private Company,Company
+CCS,Commonwealth Government Strata Title,Other
+CCT,Commonwealth Government Public Trading Trust,Trusts - Corporate Trustees
+CCU,Commonwealth Government Corporate Unit Trust,Trusts - Corporate Trustees
+CGA,Commonwealth Government Statutory Authority,Other
+CGC,Commonwealth Government Company,Company
+CGE,Commonwealth Government Entity,Other
+CGP,Commonwealth Government Partnership,Partnership
+CGS,Commonwealth Government Super Fund,Other
+CGT,Commonwealth Government Trust,Trusts - Corporate Trustees
+CMT,Cash Management Trust,Trusts - Corporate Trustees
+COP,Co-operative,Other
+CSA,Commonwealth Government APRA Regulated Public Sector Fund,Other
+CSP,Commonwealth Government APRA Regulated Public Sector Scheme,Other
+CSS,Commonwealth Government Non-Regulated Super Fund,Other
+CTC,Commonwealth Government Cash Management Trust,Trusts - Corporate Trustees
+CTD,Commonwealth Government Discretionary Services Management Trust,Trusts - Corporate Trustees
+CTF,Commonwealth Government Fixed Trust,Trusts - Corporate Trustees
+CTH,Commonwealth Government Hybrid Trust,Trusts - Corporate Trustees
+CTI,Commonwealth Government Discretionary Investment Trust,Trusts - Corporate Trustees
+CTL,Commonwealth Government Listed Public Unit Trust,Trusts - Corporate Trustees
+CTQ,Commonwealth Government Unlisted Public Unit Trust,Trusts - Corporate Trustees
+CTT,Commonwealth Government Discretionary Trading Trust,Trusts - Corporate Trustees
+CTU,Commonwealth Government Fixed Unit Trust,Trusts - Corporate Trustees
+CUT,Corporate Unit Trust,Trusts - Corporate Trustees
+DES,Deceased Estate,Other
+DIP,Diplomatic/Consulate Body or High Commissioner,Other
+DIT,Discretionary Investment Trust,Trusts - Corporate Trustees
+DST,Discretionary Services Management Trust,Trusts - Corporate Trustees
+DTT,Discretionary Trading Trust,Trusts - Corporate Trustees
+FHS,First Home Saver Accounts Trust,Trusts - Corporate Trustees
+FPT,Family Partnership,Partnership
+FUT,Fixed Unit Trust,Trusts - Corporate Trustees
+FXT,Fixed Trust,Trusts - Corporate Trustees
+HYT,Hybrid Trust,Trusts - Corporate Trustees
+IND,Individual/Sole Trader,Individual / Sole Trader
+LCB,Local Government Public Company,Company
+LCC,Local Government Co-operative,Other
+LCL,Local Government Limited Partnership,Partnership
+LCN,Local Government Other Unincorporated Entity,Other
+LCO,Local Government Other Incorporated Entity,Other
+LCP,Local Government Pooled Development Fund,Other
+LCR,Local Government Private Company,Company
+LCS,Local Government Strata Title,Other
+LCT,Local Government Public Trading Trust,Trusts - Corporate Trustees
+LCU,Local Government Corporate Unit Trust,Trusts - Corporate Trustees
+LGA,Local Government Statutory Authority,Other
+LGC,Local Government Company,Company
+LGE,Local Government Entity,Other
+LGP,Local Government Partnership,Partnership
+LGT,Local Government Trust,Trusts - Corporate Trustees
+LPT,Limited Partnership,Partnership
+LSA,Local Government APRA Regulated Public Sector Fund,Other
+LSP,Local Government APRA Regulated Public Sector Scheme,Other
+LSS,Local Government Non-Regulated Super Fund,Other
+LTC,Local Government Cash Management Trust,Trusts - Corporate Trustees
+LTD,Local Government Discretionary Services Management Trust,Trusts - Corporate Trustees
+LTF,Local Government Fixed Trust,Trusts - Corporate Trustees
+LTH,Local Government Hybrid Trust,Trusts - Corporate Trustees
+LTI,Local Government Discretionary Investment Trust,Trusts - Corporate Trustees
+LTL,Local Government Listed Public Unit Trust,Trusts - Corporate Trustees
+LTQ,Local Government Unlisted Public Unit Trust,Trusts - Corporate Trustees
+LTT,Local Government Discretionary Trading Trust,Trusts - Corporate Trustees
+LTU,Local Government Fixed Unit Trust,Trusts - Corporate Trustees
+NPF,APRA Regulated Non-Public Offer Fund,Other
+NRF,Non-Regulated Superannuation Fund,Other
+OIE,Other Incorporated Entity,Other
+PDF,Pooled Development Fund,Other
+POF,APRA Regulated Public Offer Fund,Other
+PQT,Unlisted Public Unit Trust,Trusts - Corporate Trustees
+PRV,Australian Private Company,Company
+PST,Pooled Superannuation Trust,Trusts - Corporate Trustees
+PTR,Other Partnership,Partnership
+PTT,Public Trading trust,Trusts - Corporate Trustees
+PUB,Australian Public Company,Company
+PUT,Listed Public Unit Trust,Trusts - Corporate Trustees
+SAF,Small APRA Regulated Fund,Other
+SCB,State Government Public Company,Company
+SCC,State Government Co-operative,Other
+SCL,State Government Limited Partnership,Partnership
+SCN,State Government Other Unincorporated Entity,Other
+SCO,State Government Other Incorporated Entity,Other
+SCP,State Government Pooled Development Fund,Other
+SCR,State Government Private Company,Company
+SCS,State Government Strata Title,Other
+SCT,State Government Public Trading Trust,Trusts - Corporate Trustees
+SCU,State Government Corporate Unit Trust,Trusts - Corporate Trustees
+SGA,State Government Statutory Authority,Other
+SGC,State Government Company,Company
+SGE,State Government Entity,Other
+SGP,State Government Partnership,Partnership
+SGT,State Government Trust,Trusts - Corporate Trustees
+SMF,ATO Regulated Self-Managed Superannuation Fund,Trusts - Individual Trustees
+SSA,State Government APRA Regulated Public Sector Fund,Other
+SSP,State Government APRA Regulated Public Sector Scheme,Other
+SSS,State Government Non-Regulated Super Fund,Other
+STC,State Government Cash Management Trust,Trusts - Corporate Trustees
+STD,State Government Discretionary Services Management Trust,Trusts - Corporate Trustees
+STF,State Government Fixed Trust,Trusts - Corporate Trustees
+STH,State Government Hybrid Trust,Trusts - Corporate Trustees
+STI,State Government Discretionary Investment Trust,Trusts - Corporate Trustees
+STL,State Government Listed Public Unit Trust,Trusts - Corporate Trustees
+STQ,State Government Unlisted Public Unit Trust,Trusts - Corporate Trustees
+STR,Strata-title,Other
+STT,State Government Discretionary Trading Trust,Trusts - Corporate Trustees
+STU,State Government Fixed Unit Trust,Trusts - Corporate Trustees
+SUP,Super Fund,Other
+TCB,Territory Government Public Company,Company
+TCC,Territory Government Co-operative,Other
+TCL,Territory Government Limited Partnership,Partnership
+TCN,Territory Government Other Unincorporated Entity,Other
+TCO,Territory Government Other Incorporated Entity,Other
+TCP,Territory Government Pooled Development Fund,Other
+TCR,Territory Government Private Company,Company
+TCS,Territory Government Strata Title,Other
+TCT,Territory Government Public Trading Trust,Trusts - Corporate Trustees
+TCU,Territory Government Corporate Unit Trust,Trusts - Corporate Trustees
+TGA,Territory Government Statutory Authority,Other
+TGE,Territory Government Entity,Other
+TGP,Territory Government Partnership,Partnership
+TGT,Territory Government Trust,Trusts - Corporate Trustees
+TRT,Other trust,Trusts - Corporate Trustees
+TSA,Territory Government APRA Regulated Public Sector Fund,Other
+TSP,Territory Government APRA Regulated Public Sector Scheme,Other
+TSS,Territory Government Non-Regulated Super Fund,Other
+TTC,Territory Government Cash Management Trust,Trusts - Corporate Trustees
+TTD,Territory Government Discretionary Services Management Trust,Trusts - Corporate Trustees
+TTF,Territory Government Fixed Trust,Trusts - Corporate Trustees
+TTH,Territory Government Hybrid Trust,Trusts - Corporate Trustees
+TTI,Territory Government Discretionary Investment Trust,Trusts - Corporate Trustees
+TTL,Territory Government Listed Public Unit Trust,Trusts - Corporate Trustees
+TTQ,Territory Government Unlisted Public Unit Trust,Trusts - Corporate Trustees
+TTT,Territory Government Discretionary Trading Trust,Trusts - Corporate Trustees
+TTU,Territory Government Fixed Unit Trust,Trusts - Corporate Trustees
+UIE,Other Unincorporated Entity,Other

@@ -1,4 +1,4 @@
-
+﻿
 #tblLogin .login-title {
     background: [PrimaryColor];
 }
@@ -78,8 +78,8 @@ header {
     }
 
 .table th, .table .sub-head, #grdTemplates .sub-head {
-    background-color: [PrimaryColor] !important;
-    color: [Whisper];
+    background-color: [Whisper] !important;
+    color: [PrimaryColor];
 }
 
 .pagination > .active > a, .pagination > .active > span {
@@ -118,20 +118,20 @@ header {
 }
 
 #SearchTerm::-webkit-input-placeholder { /* Chrome */
-    color: [HeaderLinkColor];
+    color: [HeaderLinkColor] !important;
 }
 
 #SearchTerm:-ms-input-placeholder { /* IE 10+ */
-    color: [HeaderLinkColor];
+    color: [HeaderLinkColor] !important;
 }
 
 #SearchTerm::-moz-placeholder { /* Firefox 19+ */
-    color: [HeaderLinkColor];
+    color: [HeaderLinkColor] !important;
     opacity: 1;
 }
 
 #SearchTerm:-moz-placeholder { /* Firefox 4 - 18 */
-    color: [HeaderLinkColor];
+    color: [HeaderLinkColor] !important;
     opacity: 1;
 }
 
@@ -141,20 +141,20 @@ header {
 }
 
 #SearchTerm:hover::-webkit-input-placeholder { /* Chrome */
-    color: [HeaderHoverColor];
+    color: [HeaderHoverColor] !important;
 }
 
 #SearchTerm:hover:-ms-input-placeholder { /* IE 10+ */
-    color: [HeaderHoverColor];
+    color: [HeaderHoverColor] !important;
 }
 
 #SearchTerm:hover::-moz-placeholder { /* Firefox 19+ */
-    color: [HeaderHoverColor];
+    color: [HeaderHoverColor] !important;
     opacity: 1;
 }
 
 #SearchTerm:hover:-moz-placeholder { /* Firefox 4 - 18 */
-    color: [HeaderHoverColor];
+    color: [HeaderHoverColor] !important;
     opacity: 1;
 }
 
@@ -225,24 +225,24 @@ h2.page-title, h4 {
 }
 
 #pagesList .g-complete > a {
-    color: [Gray];
+    color: [Gray] !important;
 }
 
 #pagesList .g-complete {
-    background-color: [Silver];
+    background-color: [Silver] !important;
 }
 
 #pagesList .active.g-complete {
-    background-color: [SecondaryColor];
+    background-color: [SecondaryColor] !important;
 }
 
 #pagesList .active > A, #pagesList .active.g-complete > A {
-    color: [PrimaryColor];
+    color: [PrimaryColor] !important;
     /*background-color: [SecondaryColor];*/
 }
 
 #pagesList .active:hover > A, #pagesList .active.g-complete:hover > A {
-    color: [PrimaryColor] !important;
+    color: [SecondaryColor] !important;
     /*background-color: [PrimaryColor];*/
 }
 
@@ -253,7 +253,7 @@ h2.page-title, h4 {
 #pagesList LI:hover, #pagesList LI:focus, #pagesList .ui-sortable LI:hover,
 #pagesList LI:hover > A, #pagesList LI:focus > A, #pagesList .ui-sortable LI:hover > A {
     /*background-color: [PrimaryColor];*/
-    color: [PrimaryColor];
+    color: [SecondaryColor] !important;
 }
 
 #pagesList .active > a, #pagesList .active:hover > a, #pagesList .active:focus > a {
@@ -302,7 +302,7 @@ h2.page-title, h4 {
 
 
 .nav > li > a {
-    color: [PrimaryColor];
+    color: [PrimaryColor] !important;
 }
 
 
